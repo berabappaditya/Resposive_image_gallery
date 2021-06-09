@@ -1,15 +1,30 @@
-import './App.css';
-import ImageStock from './components/ImageStock';
-import Modal from './components/Modal';
-import { useState } from 'react'
+import "./App.css";
+import ImageStock from "./components/ImageStock";
+import Modal from "./components/Modal";
+import Header from "./components/Header";
+import { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [selectImage, setSelectedImage]=useState(null);
+  const [selectImage, setSelectedImage] = useState(null);
   return (
-    <div className="App">
-      <ImageStock setSelectedImage={setSelectedImage} />
-      {selectImage &&<Modal setSelectedImage={setSelectedImage} selectImage={selectImage} />}
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <ImageStock setSelectedImage={setSelectedImage} />
+          </Route>
+        </Switch>
+
+        {selectImage && (
+          <Modal
+            setSelectedImage={setSelectedImage}
+            selectImage={selectImage}
+          />
+        )}
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins',
+    sans-serif;
+   
+}
+.gredient-h1 {
+    font-size: 6vh;
+    background: -webkit-linear-gradient(45deg,rgb(255, 0, 0), rgb(255, 208, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.gredient-text {
+    background: -webkit-linear-gradient(45deg, rgb(255, 0, 0), rgb(255, 208, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
