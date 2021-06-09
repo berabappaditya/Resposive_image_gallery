@@ -8,19 +8,19 @@ import { FaDownload, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function ImageStock({ setSelectedImage }) {
+  // let [like, setLike] = useState(0);
   const [dataRender, updateDataRender] = useState([]);
+
+  // function handleLike() {
+  //   setLike(like + 1);
+  // }
+
   function renderData(responseData) {
     const dataArray = responseData.map((imageData) => {
       console.log(typeof setSelectedImage);
 
       return (
-        <Col
-          md={4}
-          mt={2}
-          className="imgCol"
-          onClick={() => setSelectedImage(imageData.download_url)}
-          key={imageData.id}
-        >
+        <Col md={4} mt={2} className="imgCol" key={imageData.id}>
           <motion.div
             className="imgCard"
             whileHover={{
@@ -34,9 +34,10 @@ export default function ImageStock({ setSelectedImage }) {
               className="imgs"
               src={imageData.download_url}
               alt={imageData.author}
+              onClick={() => setSelectedImage(imageData.download_url)}
             />
             <div className="cardCon" style={{ color: "white" }}>
-              <div style={{ color: "red" }}>
+              <div className="like-box">
                 <FaHeart />
               </div>
               <p style={{ color: "white", margin: "0" }}>

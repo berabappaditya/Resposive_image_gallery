@@ -30,3 +30,8 @@
     font-weight: 600;
     align-items:center; 
 }
+.like-box{
+    color:red;
+    display:flex;
+    align-items:center;
+}
